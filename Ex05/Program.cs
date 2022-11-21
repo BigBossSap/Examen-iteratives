@@ -16,7 +16,7 @@ namespace Ex05
             isbn = Convert.ToInt32(Console.ReadLine());
 
          
-            while (isbn<100000000 || isbn>999999999)
+            while (isbn>999999999)
             {
                 Console.WriteLine("ISBN incorrecte. Torna a introduir: ");                
                 isbn = Convert.ToInt32(Console.ReadLine());
