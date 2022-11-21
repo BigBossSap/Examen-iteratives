@@ -18,19 +18,19 @@ namespace Ex05
          
             while (isbn<100000000 || isbn>999999999)
             {
-                Console.WriteLine("ISBN incorrecte. Torna a introduir: ");
-                Console.WriteLine("numero: ");
+                Console.WriteLine("ISBN incorrecte. Torna a introduir: ");                
                 isbn = Convert.ToInt32(Console.ReadLine());
             }
 
             Console.WriteLine("Digit de Control: ");
             digitControl = Convert.ToChar(Console.ReadLine());
 
-            if (digitControl != 120)
+            if (digitControl != 'x')
             {
-                while (digitControl < 48 || digitControl > 57)
+              
+                while (!(digitControl=='x' || (digitControl >= '0' && digitControl <= '9')))
                 {
-                    Console.WriteLine("Digit de Control Incorrecte");
+                    Console.WriteLine("Digit de Control Incorrecte, Intorudeix un numero de l'1 al 9:");
                     Console.WriteLine("Digit de Control: ");
                     digitControl = Convert.ToChar(Console.ReadLine());
                 }
@@ -41,13 +41,14 @@ namespace Ex05
                 isbn /=  10;                                         
                 multi = unitats *i;
                 i--;
-                suma += multi;                                
+                suma += multi;
+                
             }
 
-            Console.WriteLine(suma);
-            if (suma%11+48==(int)digitControl)
+          
+            if (suma%11+48==digitControl)
                 Console.WriteLine("ISBN Correcto");
-            else if (suma%11==10 && digitControl==120)
+            else if (suma%11==10 && digitControl=='x')
                 Console.WriteLine("ISBN Correcto");
             else
                 Console.WriteLine("ISBN Incorrecto");
